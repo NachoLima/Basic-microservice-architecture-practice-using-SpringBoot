@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: movie-service
+  cloud:
+    config:
+       enabled: false
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3366/movie-dev
