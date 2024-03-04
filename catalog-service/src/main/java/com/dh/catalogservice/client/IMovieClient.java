@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient (name = "movie-service")
+@FeignClient (name = "MOVIE-SERVICE")
 public interface IMovieClient {
 
     @GetMapping("/api/v1/movies/{genre}")
