@@ -14,9 +14,8 @@ import java.util.List;
 @RequestMapping("/api/v1/movies")
 public class MovieController {
     private final MovieService movieService;
-    private final Environment environment; // Add this line
+    private final Environment environment;
 
-    // Modify the constructor to autowire Environment
     @Autowired
     public MovieController(MovieService movieService, Environment environment) {
         this.movieService = movieService;
@@ -27,7 +26,6 @@ public class MovieController {
     ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
         List<Movie> movies = movieService.findByGenre(genre);
         HttpHeaders responseHeaders = new HttpHeaders();
-        // Add the server port to the response headers
         responseHeaders.set("Port", environment.getProperty("local.server.port"));
 
         return ResponseEntity.ok().headers(responseHeaders).body(movies);
@@ -37,7 +35,6 @@ public class MovieController {
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         Movie savedMovie = movieService.save(movie);
         HttpHeaders responseHeaders = new HttpHeaders();
-        // Similarly, add the server port to the response headers for the save endpoint
         responseHeaders.set("Port", environment.getProperty("local.server.port"));
 
         return ResponseEntity.ok().headers(responseHeaders).body(savedMovie);

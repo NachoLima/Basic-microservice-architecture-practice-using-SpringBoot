@@ -20,8 +20,7 @@ public class CatalogController {
     public ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
         ResponseEntity<List<Movie>> movies = iMovieClient.getMovieByGenre(genre);
 
-        // Now correctly using the instance variable iMovieClient
-        log.info("Response received from port: {}", movies.getHeaders().getFirst("Port")); // Ensure this matches the header name set in the movie service
+        log.info("Response received from port: {}", movies.getHeaders().getFirst("Port"));
         return movies;
     }
 
