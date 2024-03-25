@@ -3,3 +3,15 @@ spring:
     name: catalog-service
   config:
     import: optional:configserver:http://localhost:8888
+    name: catalog-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+queue:
+  catalog:
+    name: CatalogQueue
+
+#TODO Pasar esta configuracion al repositorio de configuraciones
