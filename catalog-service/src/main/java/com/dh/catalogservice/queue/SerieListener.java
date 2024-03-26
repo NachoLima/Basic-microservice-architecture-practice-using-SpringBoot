@@ -18,7 +18,7 @@ public class SerieListener {
     @RabbitListener(queues = {"${queue.catalog.name}"})
         public void receive(@Payload Serie serie) {
             generoService.saveSerie(serie);
-            System.out.println("Serie received: " + serie);
+            System.out.println("Serie recibida: " + serie);
         }
 
 

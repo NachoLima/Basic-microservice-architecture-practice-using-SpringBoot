@@ -6,8 +6,6 @@ import com.dh.catalogservice.repository.GeneroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class GeneroService {
     //Inyecto el repositorio de genero
