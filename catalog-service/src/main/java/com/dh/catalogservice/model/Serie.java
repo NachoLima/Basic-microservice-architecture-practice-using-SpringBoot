@@ -1,5 +1,9 @@
 package com.dh.catalogservice.model;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public record Serie(String id, String name, String genre, List<Season> seasons) {
