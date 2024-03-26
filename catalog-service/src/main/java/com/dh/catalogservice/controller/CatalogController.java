@@ -26,6 +26,7 @@ public class CatalogController {
     private ISerieClient iSerieClient;
 
     //Inyecto el servicio de genero
+    @Autowired
     private GeneroService generoService;
 
     //Endpoint para buscar por genero en la base de datos de catalogo
