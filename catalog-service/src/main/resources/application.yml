@@ -3,7 +3,8 @@ spring:
     name: catalog-service
   config:
     import: optional:configserver:http://localhost:8888
-    name: catalog-service
+
+    #TODO Pasar esta configuracion al repositorio de configuraciones
   rabbitmq:
     username: guest
     password: guest
@@ -14,7 +15,7 @@ queue:
   catalog:
     name: CatalogQueue
 
-#TODO Pasar esta configuracion al repositorio de configuraciones
+
   mongodb:
     embedded:
       version: 4.0.2
