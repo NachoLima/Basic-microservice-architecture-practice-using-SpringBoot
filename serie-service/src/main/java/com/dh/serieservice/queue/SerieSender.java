@@ -13,6 +13,7 @@ public class SerieSender {
     private final Queue catalogQueue;
 
     public void send(Serie serie) {
+
         this.rabbitTemplate.convertAndSend(this.catalogQueue.getName(), serie);
     }
 

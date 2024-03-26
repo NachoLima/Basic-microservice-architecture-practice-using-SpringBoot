@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class GeneroService {
+    //Inyecto el repositorio de genero
     @Autowired
     private GeneroRepository repository;
 
@@ -19,7 +20,7 @@ public class GeneroService {
         return repository.findByName(nombre);
     }
 
-
+    //Guardar una serie
     public String saveSerie(Serie serie) {
         //Si no existe el genero lo creo y agrego la serie
         Genero genero = repository.findByName(serie.genre());
