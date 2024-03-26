@@ -69,6 +69,8 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
     </dependencies>
 
 	<dependencyManagement>
