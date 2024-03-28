@@ -3,30 +3,3 @@ spring:
     name: catalog-service
   config:
     import: optional:configserver:http://localhost:8888
-
-    #TODO Pasar esta configuracion al repositorio de configuraciones
-  rabbitmq:
-    username: guest
-    password: guest
-    host: localhost
-    port: 5672
-
-queue:
-  serie:
-    name: serieQueue
-  movie:
-    name: movieQueue
-
-
-  mongodb:
-    embedded:
-      version: 4.0.2
-  data:
-    mongodb:
-      database: Catalog
-      port: 27017
-
-management:
-  tracing:
-    sampling:
-      probability: 1.0
