@@ -12,8 +12,10 @@ spring:
     port: 5672
 
 queue:
-  catalog:
-    name: CatalogQueue
+  serie:
+    name: serieQueue
+  movie:
+    name: movieQueue
 
 
   mongodb:

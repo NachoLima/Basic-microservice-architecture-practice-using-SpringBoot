@@ -1,6 +1,7 @@
 package com.dh.catalogservice.Service;
 
 import com.dh.catalogservice.model.Genero;
+import com.dh.catalogservice.model.Movie;
 import com.dh.catalogservice.model.Serie;
 import com.dh.catalogservice.repository.GeneroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ public class GeneroService {
 
     //Guardar una serie
     public String saveSerie(Serie serie) {
-        //Si no existe el genero lo creo y agrego la serie
         Genero genero = repository.findByName(serie.genre());
         if (genero == null) {
             Genero newgenero = new Genero();
@@ -28,14 +28,30 @@ public class GeneroService {
             newgenero.addSerie(serie);
             repository.save(newgenero);
         }else {
-            //Si existe el genero, agrego la serie
+
             genero.addSerie(serie);
             repository.save(genero);
 
         }
 
-        return serie.id();
+        return serie.id();    }
+
+    public Long saveMovie(Movie movie) {
+
+        Genero genero = repository.findByName(movie.genre());
+        if (genero == null) {
+            Genero newgenero = new Genero();
+            newgenero.setName(movie.genre());
+            newgenero.addMovie(movie);
+            repository.save(newgenero);
+        }else {
+
+            genero.addMovie(movie);
+            repository.save(genero);
+
+        }
+
+        return movie.id();
     }
-    //TODO Implementar el metodo para guardar una Movie
 
 }

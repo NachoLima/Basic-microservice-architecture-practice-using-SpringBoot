@@ -21,10 +21,13 @@ public class Genero {
     @Id
     private String id;
     private String name;
-    private List<Movie> peliculas = new ArrayList<>();
+    private List<Movie> movies = new ArrayList<>();
     private List<Serie> series = new ArrayList<>();
 
     public void addSerie(Serie serie) {
         this.series.add(serie);
+    }
+    public void addMovie(Movie movie) {
+        this.movies.add(movie);
     }
 }
