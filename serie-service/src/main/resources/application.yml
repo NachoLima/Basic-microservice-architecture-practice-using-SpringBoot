@@ -1,35 +1,5 @@
-server:
-    port: ${PORT:${SERVER_PORT:0}}
-
 spring:
-    application:
-        name: serie-service
-    mongodb:
-        embedded:
-            version: 4.0.2
-    data:
-        mongodb:
-            database: test
-            port: 27017
-    rabbitmq:
-        username: guest
-        password: guest
-        host: localhost
-        port: 5672
-
-queue:
-    serie:
-        name: serieQueue
-
-
-eureka:
-    instance:
-        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-        prefer-ip-address: true
-        lease-renewal-interval-in-seconds: 5
-        lease-expiration-duration-in-seconds: 10
-
-management:
-    tracing:
-        sampling:
-            probability: 1.0
+  application:
+    name: catalog-service
+  config:
+    import: optional:configserver:http://localhost:8888
