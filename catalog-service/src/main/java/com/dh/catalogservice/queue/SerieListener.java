@@ -15,7 +15,7 @@ public class SerieListener {
     private GeneroService generoService;
 
     //Recibe un objeto Serie y lo guarda en la base de datos de catalogo
-    @RabbitListener(queues = {"${queue.catalog.name}"})
+    @RabbitListener(queues = {"${queue.serie.name}"})
         public void receive(@Payload Serie serie) {
             generoService.saveSerie(serie);
             System.out.println("Serie recibida: " + serie);

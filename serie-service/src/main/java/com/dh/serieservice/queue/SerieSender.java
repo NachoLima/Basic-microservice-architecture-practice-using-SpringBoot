@@ -10,11 +10,11 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 @RequiredArgsConstructor
 public class SerieSender {
     private final RabbitTemplate rabbitTemplate;
-    private final Queue catalogQueue;
+    private final Queue serieQueue;
 
     public void send(Serie serie) {
 
-        this.rabbitTemplate.convertAndSend(this.catalogQueue.getName(), serie);
+        this.rabbitTemplate.convertAndSend(this.serieQueue.getName(), serie);
     }
 
 }
